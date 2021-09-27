@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>asmr-soundtrack</title>
+	<link href="https://fonts.googleapis.com/css2?family=Ultra&display=swap" rel="stylesheet">
+	<style type="text/css">
+		body{background-image: bgfire.mp4;}
+		html{font-family: 'Ultra', serif;}
+		h1,img,p {margin: 0;}
+		img{display:  block; width: 100%}
+		#title{margin-top:  200px; margin-bottom: 0px; margin: auto; padding: 50px;font-size:  2.1em; color:  white;line-height: 1.2; text-align: center;}
+		.header{width:  1000px; margin: auto;}
+		.container{display: flex; margin: 0px;}
+		.objet{width:  400px; margin:  0px 15px; margin-bottom: 75px;}
+		p{line-height: 1.5; fontsize:  1.5em; margin-top: 100px; margin-bottom: 120px; margin-left: 20px; text-align: center;}
+		.slider{width:  350px; margin: auto; display: block; text-align: left; margin-bottom: 100px;}
+		input[type=range]{-webkit-appearance: none;background: transparent; background: white;height:2px;}
+		input[type=range]::-webkit-slider-thumb
+		{-webkit-appearance: none;border:  none;height:  14px; width:  14px; background: yellow; border-radius: 50%;}
+	</style>
+
+</head>
+<body>
+	<div class="back">
+	<video src="bgfire.mp4" muted autoplay loop></video>
+	<div class="header">
+		<div id="title">
+			<h1>
+				What does it
+				<br>
+				 sound like?
+				</br>
+			</h1>
+		</div>
+	<div class="container">
+	<div class="objet" style="margin-top: 170px;">
+		<img src="keyboard.png" id="keyboardBut">
+		<audio id="keyboardSnd" src="keyboard.wav"></audio>
+	</div>
+	<div class="objet" style="margin-top: 170px;">
+		<img src="birth.png" id="birthBut">
+		<audio id="birthSnd" src="birth.wav"></audio>
+	</div>
+	<div class="objet" style="margin-top: 170px;">
+		<img src="bowl.png" id="bowlBut">
+		<audio id="bowlSnd" src="bowl.mp3"></audio>
+	</div>
+	<div class="objet" style="margin-top: 170px;">
+		<img src="rain.png" id="rainBut">
+		<audio id="rainSnd" src="rain.mp3"></audio>
+	</div>
+	<div class="objet" style="margin-top: 170px">
+		<img src="speaker.png" id="speakerBut">
+		<audio id="speakerSnd" src="speaker.mp3"></audio>
+	</div>
+</div>
+<p>
+	"Click the object that makes you curious!"
+</p>
+</div>
+<input type="range" id="vol" max="100" min="0" class="slider">
+</div>
+
+	<script type="text/javascript">
+		
+		var state = true;
+
+		keyboardBut.onclick = function(){
+			if(state){
+				keyboardSnd.play();
+				state = false;
+			vol.value = 100;
+			vol.oninput = function(){
+				keyboardSnd.volume = vol.value / 100;
+			}
+				}else{
+					keyboardSnd.pause();
+					state = true;
+				}
+			}
+
+		birthBut.onclick = function(){
+			if(state){
+				birthSnd.play();
+				state = false;
+			vol.value = 100;
+			vol.oninput = function(){
+				birthSnd.volume = vol.value / 100;
+			}
+				}else{
+					birthSnd.pause();
+					state = true;
+				}
+			}
+
+		bowlBut.onclick = function(){
+			if(state){
+				bowlSnd.play();
+				state = false;
+			vol.value = 100;
+			vol.oninput = function(){
+				bowlSnd.volume = vol.value / 100;
+			}
+				}else{
+					bowlSnd.pause();
+					state = true;
+				}
+			}			
+
+		rainBut.onclick = function(){
+			if(state){
+				rainSnd.play();
+				state = false;
+			vol.value = 100;
+			vol.oninput = function(){
+				rainSnd.volume = vol.value / 100;
+			}
+				}else{
+					rainSnd.pause();
+					state = true;
+				}
+			}
+
+		speakerBut.onclick = function(){
+			if(state){
+				speakerSnd.play();
+				state = false;
+			vol.value = 100;
+			vol.oninput = function(){
+				speakerSnd.volume = vol.value / 100;
+			}
+				}else{
+					speakerSnd.pause();
+					state = true;
+				}
+			}			
+	</script>		
+</html>
